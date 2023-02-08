@@ -1,15 +1,11 @@
-\c postgres;
-drop DATABASE takalo;
-CREATE DATABASE takalo;
-\c takalo;
 
 CREATE TABLE genre(
-    id SERIAL PRIMARY KEY,
+    id INT PRIMARY KEY auto_increment,
     genre VARCHAR(5)
 );
 
 CREATE TABLE utilisateur(
-    id SERIAL PRIMARY KEY,
+    id INT PRIMARY KEY auto_increment,
     nom VARCHAR(100),
     prenom VARCHAR(105),
     mail VARCHAR(50),
@@ -20,7 +16,7 @@ CREATE TABLE utilisateur(
 );
 
 CREATE TABLE administrateur(
-    id SERIAL PRIMARY KEY,
+    id INT PRIMARY KEY auto_increment,
     nom VARCHAR(10),
     prenom VARCHAR(15),
     mail VARCHAR(20),
@@ -28,12 +24,12 @@ CREATE TABLE administrateur(
 );
 
 CREATE TABLE categorie(
-    id SERIAL PRIMARY KEY,
+    id INT PRIMARY KEY auto_increment,
     nomCategorie VARCHAR(10)
 );
 
 CREATE TABLE objet(
-    id SERIAL PRIMARY KEY ,
+    id INT PRIMARY KEY auto_increment ,
     idCategorie INT,
     idUtilisateur INT,
     titre VARCHAR(50),
@@ -50,7 +46,7 @@ CREATE TABLE photo(
 );
 
 CREATE TABLE proposition(
-    id SERIAL PRIMARY KEY ,
+    id INT PRIMARY KEY auto_increment ,
     idObjet1 INT,
     dateEnvoie timestamp,
     idObjet2 INT,
